@@ -1,0 +1,744 @@
+Pre-req :--
+Register on https://tinyurl.com/y6zjon73 
+Please confirm on chat once done
+
+Training Methodology :--
+75-25  -- handson to theory
+Lunch break around 1.30
+Theory -- Demos -- HandsOn(lab)
+
+Your Intro :--
+Your intro 
+Any expectation/questions on the content
+
+
+
+
+
+
+DevOps Principles (12 facter apps) :--
+Ensure to use build utilities for dependency resolution or a library (jfrog etc)
+Infrastructure should be treated as code. -- 
+Infra provisioning -- cloud formation and terraform
+Infra management -- ansible, chef, puppet etc
+Infra should be untouchable, everything should be done remotely
+Environments should never overlap, environments should be disposable
+Use distributed code repositories.
+Reverse feedback loop should always be there with communication email, slack integration etc …
+
+
+
+Lab Access :--
+You all have been provided a windows machine which you can use to connect to lab environment.
+Today we will only use ubuntu machine. 
+
+Lab -- Try connecting with ubuntu machine and confirm on the chat.
+
+
+
+
+
+
+
+
+
+
+Git -- 
+apt-get install git
+Git snapshots are called as commits
+Untracked, stagged and committed
+
+mkdir democode
+    6  cd democode/
+    7  ls
+    8  clear
+    9  ls
+   10  git init
+   11  ls -la
+   12  git config --global user.name "himanshu"
+   13  git config --global user.email "rathihimanshu@live.com"
+   14  clear
+   15  nano demo.py
+   16  nano demo.py 
+   17  git status
+   18  git add .
+   19  git status
+   20  nano demo.py 
+   21  git status
+   22  git add .
+   23  git status
+   24  git commit -m "first commit"
+   25  clear
+   26  git log
+   27  nano demo.py 
+   28  git status
+   29  git add .
+   30  git commit -m "second commit"
+
+
+Ex1:-- Create a new directory, initialize git, configure it, make 2 commits in there.
+
+Git Checkout :--
+Head -- by default it always points to the latest commit
+
+*Never ever make a modification to the code in detached HEAD state.
+
+git commit -m "third commit"
+    8  git log --oneline
+    9  git checkout 4306b96
+   10  clear
+   11  ls
+   12  cat demo.py 
+   13  git log
+   14  git checkout master
+   15  git log --oneline
+
+Ex2:-- Make one more commit and learn to use git checkout to see the state of the code at different commits.
+Time till -- 11.26
+
+Git Revert :--
+In order to revert changes of commit. Primarily used with latest commit only.
+
+ls
+    2  cd democode/
+    3  clear
+    4  git log --oneline
+    5  git revert 2da6e52
+    6  git log --oneline
+
+Ex3 :-- Try out git revert with the latest commit and verify the operation.
+
+Git Reset :-- is used to remove a previous commit or multiple commits.
+Can operate in three modes -- soft, mixed and hard.
+soft -- it removes the commit and puts the changes in staging mode.
+
+git log --oneline
+    6  git reset 81bbc98 --soft
+    7  git log --oneline
+    8  git status
+    9  git reset 4306b96 --soft
+   10  git log --oneline
+   11  git status
+   12  nano demo.py 
+   13  git commit -m "second commit again"
+   14  git log --oneline
+
+Ex4:-- try out git reset --soft and understand what it does.
+Time till -- 11.48
+
+Mixed mode -- in the mixed mode changes are put in pre-staging.
+
+git log --oneline
+   18  git reset 4306b96 --mixed
+   19  git log --oneline
+   20  git status
+
+Ex5 :-- Try out git reset --mixed and understand the difference.
+
+
+
+
+
+Hard Mode -- In case of hard mode it not only removes the commits, it also removes the content. This is irreversible so be a bit cautious.
+cat demo.py 
+   29  git reset 4306b96 --hard
+   30  git log --oneline
+   31  git status
+   32  cat demo.py 
+
+Ex6 :-- Try out git reset with --hard mode.
+
+
+Ex7 :-- If you dont have a github account, sign up for it and get access to it by verifying your email address.
+
+
+
+Ex8 :-- Create a new org, ex deopsyourname and create a public repo called gitdemo.
+
+git remote add origin https://github.com/devopsnew2021/gitdemo
+    5  git branch
+    6  git push origin master
+
+Ex9 :-- Push the local code to remote repo.
+
+
+git log --oneline
+    7  git pull origin master
+    8  git log --oneline
+Ex10 :-- Make a remote commit and pull it down to local by git pull.
+
+Branches :--
+git branch
+   13  git branch dev
+   14  git branch
+   15  git checkout dev
+   16  git branch
+   17  ls
+   18  nano dev.txt
+   19  git add .
+   20  git commit -m "dev first commit"
+   21  git log --oneline
+   22  git branch
+   23  git checkout master
+   24  ls
+   25  git log --oneline
+   26  git push origin dev
+
+
+Ex11 :-- Create a new dev branch locally, make a new file dev.txt make a commit and push this branch to remote repo.
+git checkout master
+Git merge dev
+
+Merging :--
+Fastforward merge -- it is when child merges into parent and parent has moved at all.
+
+PullRequest :-- 
+
+
+
+
+
+
+
+
+Jenkins :--
+Install Jenkins :--
+sudo -i (to become root)
+Connect with your machine.
+apt-get install default-jre default-jdk
+https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+curl ifconfig.co 
+publicip:8080
+
+Ex12:-- Install jenkins on ur ubuntu machines.
+
+
+Trigger :-- A job is initialised when a triggers is executed.
+Ex -- making a commit to code repo, cron job, manually, ….etc
+
+
+Pipeline :-- A collection of interdependent jobs can be considered.
+*Jenkins runs as a daemon on your system.
+
+*Jenkins will be running as distributed eco-system in most of the projects.
+
+*Jenkins configuration file, /etc/default/jenkins
+
+
+cat /etc/group | grep jenkins
+  108  nano /etc/default/jenkins
+  109  service restart jenkins
+  110  service jenkins restart
+Ex13:-- Change the default port of your jenkins to 8090 from 8080.
+
+
+
+Jenkins Home :--
+/var/lib/jenkins
+
+cd /var/lib/jenkins/
+  131  ls
+  132  nano config.xml 
+  133  cd nodes/
+  134  ls
+  135  xclwear
+  136  clear
+  137  cd ..
+  138  ls
+  139  clear
+  140  cat /var/log/jenkins/
+  141  cd /var/log/jenkins/
+Ex:-- Take a look into the jenkins home directory.
+
+
+Ex:-- Connect with your windows node and hit the ubuntu ip on port 8090 from there on and verify if you can connect with jenkins. Connec to your ubuntu machine from windows.
+
+
+To Unlock Jenkins :--
+Cat /var/lib/jenkins/secrets/initialAdminPassword
+Choose install suggested plugins
+Create admin user with a password, click on save&continue
+Click on save&finish
+Ex:-- Unlock you jenkins and set it up and create the firstuser.
+
+
+
+Plugins :--
+.hpi 
+https://plugins.jenkins.io/ 
+
+Add these plugins :--
+maven
+jacoco
+Sonarqube Scanner
+Common api for blueocean
+Ex21:-- Install the above plugins and restart the jenkins.
+
+Ex22 :-- Create a job called jobone which clones your repository.Then create another job called jobtwo which just does echo ‘jobtwo’. Ensure that jobtwo use jobone as trigger. Now trigger jobone and see if jobtwo executed.
+/var/lib/jenkins/workspace/
+
+Ex23:-- Create a new job called gitint. Then configure the trigger as poll scm. Use your gitdemo repo as git repo. Add a shell script to your local repo and push it to remote repo, to executed that shell script.
+
+Ex24:-- Create a job called hellojava, and integrate with gitrepo called hellojava. Put a single .java file into it, and configure the trigger as poll scm every minute. Ensure that compilation is done and java code is executed.
+
+
+
+
+
+
+
+
+
+
+DAY -- 2
+
+Jenkins with Build Tools :--
+Integration with popular build tools
+Global Tools can be used to dynamic provide binaries
+
+Ex1:-- Go to global tools configuration, add the maven installation.
+
+https://github.com/jenkinsdemos/newmaven 
+
+Ex2:-- Create a new job, mavenjob with above repo and in the build step configure maven with command - clean package.
+
+
+
+Ex3:-- Fork the above repo and configure a new job, which gets triggered when you make commit to your code repo.
+
+Continuous Delivery :--
+Ensure your jenkins is running on 8090. /etc/default/jenkins
+apt-get install tomcat9
+Connect to your machine on port 8080 to verify if tomcat9 is up and running.
+chmod -R 777 /var/lib/tomcat9/
+Make the proper modifications in installtomcat.sh to do the deployment and verify continuous build and continuous delivery.
+-- chmod +x installtomcat.sh
+-- ./installtomcat.sh
+
+
+Ex4 :-- https://github.com/jenkinsdemos/gradle1 using it do the gradle build with a new job. Just use the build task with gradle.
+
+*TDD is strictly followed withint jenkins premises.
+
+Jacoco :--
+First add the jdk8 with your own oracle account
+Add the jacoco plugin
+https://github.com/jenkinsdemos/jacocoexample 
+Try it out
+
+
+
+
+
+With Sonar :--
+Sonar client plugin is called sonarqube scanner.
+
+Jenkins CLI :--
+Jenkins URL/cli
+wget https://fidelitydevops.s3.us-east-2.amazonaws.com/jenkins-cli.jar
+java -jar jenkins-cli.jar -s http://3.23.104.246:8090 list-jobs
+java -jar jenkins-cli.jar -s http://3.23.104.246:8090 -auth username:password list-jobs
+Time till -- 11.48
+Jenkins Api Token :-- alphanumeric values which one can use to authentication
+Click on username, go to configure and generate a token
+java -jar jenkins-cli.jar -s http://3.23.104.246:8090 -auth username:apitoken list-jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Containers :--
+Containers are lightweight self dependent run time environments which are supposed to be stateless, dataless  and can be used to deployment any kind of run time such as application code, databases, middlewares etc etc….
+*Docker is a software which allows you to create containers.
+
+Install Docker :--
+On your ubuntu machine
+wget -qO- https://get.docker.com/ | sh
+wget -qO- https://get.docker.com/ | sh
+  213  clear
+  214  which docker
+  215  service docker status
+  216  docker
+
+Ex:-- Install docker on your ubuntu machine and verify if its up and running.
+
+*Containers are created from image.
+*From an image n number of containers can be created.
+*Docker hub hub.docker.com is community portal where in can find all kinds of docker images.
+
+ExD1:-- Go to docker hub and sign up with an email address and verify it and sign in.
+Time till -- 12.34
+
+Two types of Images:--
+Official Images -- reponame:tag
+Developer Images -- dockerhubid/reponame:tag
+*tag part usually represent the version, when you dont specify the tag - it is assumed to be as latest.
+
+
+docker pull tomcat:8
+  264  clear
+  265  docker pull mysql 
+  266  clear
+  267  docker pull tutum/apache-php
+  268  clear
+  269  docker images
+Ex:-- Pull the above images, go to your docker hub account and search for the images that you are familiar with and get an idea of it.
+
+
+
+*Container are the run time 
+*A container can never ever be running if the process in it stops
+*Every container image will a some process as its default process, it could be a foreground process or a background process.
+*Every container will look a process to the base vm while it is running. 
+*Every container will have a default process which always gets PID-1 and that is the most important process for the container.
+*To safe exit -- ctrl + p + q
+
+
+
+
+
+docker run -d --name=c1 redis
+  281  docker ps
+  282  docker run -it --name=c2 centos:6
+  283  docker ps
+  284  docker ps -a
+  285  docker run -it --name=c3 centos:6
+  286  docker ps
+  287  docker exec -it c3 /bin/bash
+Exd2:-- Create above containers, understand the importance of process and safe exit. 
+
+
+*When not sure use -itd 
+docker run -itd --name=a1 redis
+  274  docker run -itd --name=a2 tomcat:8
+  275  docker run -itd --name=a3 tutum/apache-php
+  276  docker run -itd --name=a4 centos:6
+
+Images :--
+Writing a dockerfile
+From a container
+
+*attach -- attach with pid-1
+*commit -- 
+
+Ex:-- A container image of 100mb, 5 containers out of it ?
+Total space -- 100
+
+*Docker uses UFS, docker storage driver to mount the container on the undelying image.
+
+
+docker attach a4
+  286  docker ps -a
+  287  docker
+  288  clear
+  289  docker run -it -name=b1 centos:6
+  290  docker run -it --name=b1 centos:6
+  291  docker commit b1 b1image
+  292  docker images
+  293  docker run -it --name=d1 b1image
+  294  docker
+  295  clear
+  296  ls
+  297  docker cp jenkins-cli.jar d1:/cli.jar
+  298  docker attach d1
+  299  docker
+  300  docker diff d1
+  301  docker ps
+  302  docker images
+  303  clear
+  304  docker
+  305  docker info
+  306  docker
+  307  docker inspect d1
+  308  docker
+  309  clear
+  310  docker image
+  311  clear
+  312  docker images
+  313  docker login
+  314  dockek tag b1image rathihimanshu/b1image:v1
+  315  docker tag b1image rathihimanshu/b1image:v1
+  316  docker image
+  317  docker images
+  318  docker push rathihimanshu/b1image:v1
+
+
+
+
+
+
+
+
+Ex1:-- Try out the container commands till docker logout.
+Ex2:-- Create a container called n1 using nginx image. Put your name using echo “yourname” > /usr/share/nginx/html/index.html. Comeout of the container, get the ip of container. Run curl ipofcontainer and Verify if you can see your name. Convert this container into an image called dockerhubid/myname:v1 and push it to your docker hub and share the the image id with me.
+Time till -- 15.10
+*docker commit containername srbhdocker/myname:v1
+*docker exec -it n1 /bin/bash
+
+
+
+
+docker rm -f `docker ps -a -q`
+  304  docker run -itd --name=a1 centos:6 /bin/sh -c 'while true;do X=$[$X+1];echo $X;sleep 1;done'
+  305  docker logs a1
+  306  docker pause a1
+  307  docker logs a1
+  308  docker unpause a1
+  309  docker logs a1
+  310  docker
+  311  docker stats a1
+  312  docker top a1
+
+
+Ex3:-- Go over the remaining docker commands and understand them well.
+
+
+PORT Mappings :--
+Host to container --
+docker run -itd --name=m1 -p 8000:80 nginx
+
+Ex:-- Using the myname image, map the port to 8100 to port 80 of container with the myname image and verify.
+docker run -itd --name=y1 -p 8100:80 yourimagename
+
+docker run -itd --name=m2 -P nginx (32768-65000)
+docker port containerport
+Docker Volume :--
+*Never ever large static data inside container
+*You can feed data to containers from outside.
+
+docker run -itd --name=v1 -v /root/web:/usr/share/nginx/html -p 8200:80 nginx
+
+Ex:-- Try a docker volume example and understand it.
+
+
+
+
+
+
+Dockerfile :--
+*is a way to write docker images
+*Write a dockerfile → do the build to get the image → use the image to create container
+FROM
+COPY
+ADD -- additionally add can also perform wget on the file
+ENV -- environment
+FROM centos:6
+COPY test.txt /test.txt
+ADD https://facebook.com/index.php /fbhome.php
+ENV var1 value1
+
+docker build -t i1:v1 -f Dockerfile .
+
+RUN -- is primarily used to interact with package managers or to run commands
+USER --
+WORKDIR -- 
+FROM centos
+COPY test.txt /test.txt
+ADD https://facebook.com/index.php /fbhome.php
+ENV var1 value1
+RUN useradd testuser && mkdir testdir && yum install -y curl iputils wget
+USER testuser
+WORKDIR /testdir
+
+VOLUME -- will create and mount a volume everytime you create a container out of it
+EXPOSE 
+FROM centos
+COPY test.txt /test.txt
+ADD https://facebook.com/index.php /fbhome.php
+ENV var1 value1
+#RUN useradd testuser && mkdir testdir && yum install -y curl iputils wget
+#USER testuser
+#WORKDIR /testdir
+VOLUME /demovol
+EXPOSE 440
+
+
+docker volume prune
+  363  clear
+  364  cd /var/lib/docker/volumes/
+  365  ls
+  366  docker run -itd --name=a1 -P i1:v3
+  367  ls
+  368  docker attach a1
+  369  clear
+  370  ls
+  371  cd d5183552b6a4cfdd5948b39325a74d0bdb29be0b28b6e7e52492731dd7b624e0/
+  372  ls
+  373  cd _data/
+
+CMD -- then the process can overridden during run time 
+ENTRYPOINT -- then the PID1 cannot be overridden during the run time
+*When CMD and ENTRYPOINT both are there then ENTRYPOINT will control the PID1 and CMD will be used as an argument which you override during the run time.
+
+docker build -t i1:v4 -f Dockerfile .
+  494  docker rm -f `docker ps -a -q`
+  495  docker run -it --name=a1 i1:v4
+  496  cat Dockerfile 
+  497  docker ps
+  498  docker run -it --name=a2 i1:v4 /bin/echo 'hello from runtime'
+  499  nano Dockerfile 
+  500  docker build -t i1:v5 -f Dockerfile .
+  501  docker run -it --name=b1 i1:v5 
+  502  docker run -it --name=b2 i1:v5 /bin/echo 'hello from runtime' 
+
+Ex1:--- Take a look at tomcat, nginx, centos and mysql image dockerfiles and tell me if you alter their PID1 during runtime.
+
+
+Integrating docker with Jenkins :--
+Integration is done via plugins. Docker
+Add the docker as a platform
+Go to manage jenkins
+Configure nodes, clouds
+Configure clouds
+usermod -a -G docker jenkins
+service docker stop
+dockerd -H unix:///var/run/docker.sock -H tcp://yourprivateip:2375
+ctrl z
+bg
+usermod -a -G docker jenkins
+Restart jenkins -- service jenkins restart
+Go to jenkins, manage jenkins
+Add cloud, nodes
+Go to your github and create a sample repo -- dockerwithjen
+Ensure you have done docker login
+FROM nginx
+COPY index.html /usr/share/nginx/html/index.html
+rathihimanshu/dockerwithjen:${BUILD_NUMBER}
+
+Break Till -- 10.55 am
+
+Ansible(CM Utility) :--
+*CM is the capability to manage ur infra as code in lines with principles of devops
+*Opensource, python run time.
+*Ansible is a redhat product now.
+
+Ansible Lab :--
+Connect with other ubuntu machine available.
+Change their hostnames, one machine will be ansimanager, other machine will ansinode
+→ hostnamectl set-hostname ansimanager
+→ exec bash
+On your ansimanager, open /etc/hosts
+172.31.16.86 ansinode
+On both the machines, adduser ansiuser
+On both the machines, usermod -aG sudo ansiuser
+On both the machine, sudo visudo
+%sudo   ALL=(ALL:ALL) NOPASSWD: ALL
+On your manager, 
+→ su - ansiuser
+→ ssh-keygen
+→ ssh-copy-id -i .ssh/id_rsa.pub ansiuser@ansinode
+On manager
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu 
+→ apt-get install python3-pip
+→ pip3 install ansible
+/etc/ansible --
+hosts - inventory file, details of machines you would like to control
+ansible.cfg - default file containing ansible configurations
+ansible -m ping ansinode
+ansible ansinode -b -m file -a "path=/home/ansiuser/demo.txt state=touch"
+https://github.com/ansible/ansible/blob/devel/lib/ansible/modules/file.py 
+https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html 
+
+*Ansible modules -- python scripts
+
+Ex:-- Find out the module to create a user, a group, a directory, to install a package, to start & stop  a service.
+
+
+
+
+
+Ex1:-- Create a directory on the ansinode /home/ansiuser/mydir and then create a file with content as ur name in it /home/ansiuser/mydir/myname.txt.
+*use -b to assume sudo permissiong
+Ex2:-- Create a user called demouser on remote machine with uid 1101.
+Hint-- user
+ansible ansinode -b -m user -a "name=demouser uid=1101"
+Ex3:-- Install tomcat9 on remote machine and ensure service of tomcat9 isrunning.
+Hint-- apt, service
+ansible ansinode -b -m apt -a "name=tomcat9 state=present"
+
+
+
+*In ansible, you write playbooks to configure ur infrastructure.
+*playbooks are written in yaml.
+
+Break Till -- 12.25
+
+Ex:-- You would like to create a dir, create a file, install apache2, create a user ….
+
+---
+- hosts: ansinode
+  become: true
+  tasks:
+  - name: creates a dir
+    file: path='/root/demodir' state=directory
+  - name: creates a user
+    user: name=testuser 
+  - name: installs something
+    apt: name=apache2 state=present
+
+
+ansible-playbook playone.yaml --check
+    9  ansible-playbook playone.yaml --syntax-check
+
+Ex1:--Create a cronjob for user ansiuser on the ansinode, with the command logger hello every minute.
+Ex2:-- Install wget, curl on ansinode.
+Ex3:-- Create a user called newuser and make it part of sudo group.
+Jenkins :--
+Github pull request -- plugin
+Multibranch pipelines
+Pipeline as code → 
+Master -- stag -- dev (Jenkinsfile -- is a file which can container pipeline definition)
+Pipeline view, blueocean -- plugin
+Promoted build
+Delivery pipeline
+
+
+
+
+
+
+
+
+AWS Access :--
+https://courseandlabs.com/
+Click on account, register urself
+Sign in with the account
+Once signed in, click on join class -- 
+ClassID :-- Class-springpeople
+Passowrd :-- aws789
+Once a class is allocated, click on the arrow, click on provision lab and provision it for 4 hours.
+It will take 1-2 minute for your lab to provisioned.
+Go to https://aws.amazon.com/console/ , sign in as IAM user
+*You only have access to us-east-1
+Go to VPC,  create the default VPC.
+Go to IAM and assign the user your logged in with administrator permission.
+In IAM create a role for ec2 service called ec2admin and assign it administrator policy.
+ Go to ec2, create a key pair download in ppk(install putty on ur windows machine).
+Go to ec2, launch an ec2 instance using linux-2 ami, ensure to assign the role ec2admin that you created, select default security group, launch the instance with selected key pair.
+Modify your security group to allow all kinds of traffic inbound and outbound.
+Ssh into this machine using ec2-user as the user.
+Install eksctl -- 
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/sbin
+eksctl version
+Install Kubectl 
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/sbin/kubectl
+kubectl version
+Time till -- 15.15
+
+
+
+
+
+
