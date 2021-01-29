@@ -1,0 +1,259 @@
+    1  pwd
+    2  cd 
+    3  apt-get install default-jre default-jdk
+    4  cd clouduser
+    5  cd ~clouduser
+    6  pwd
+    7  cd ~cloud_user/democode/
+    8  git branch dev
+    9  git checout dev
+   10  git checkout dev
+   11  git update
+   12  ls lart
+   13  ls -lart
+   14  cat dev.txt 
+   15  git status dev.txt
+   16  git update dev.txt
+   17  git co dev.txt
+   18  git checkout dev.txt
+   19  git pull
+   20  git pull origin dev
+   21  ls -lart
+   22  cat dev.txt
+   23  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+   24  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add - sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+   25      /etc/apt/sources.list.d/jenkins.list'
+   26  sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+   27  sudo apt-get update
+   28  cat dev.txt 
+   29  sudo apt-get install jenkins
+   30  curl ifconfig.co
+   31  wget 52.172.41.88:8080
+   32  service jenkins status
+   33  cat /etc/group | grep jenkins
+   34  vi /etc/default/jenkins 
+   35  service jenkins restart
+   36  vi /etc/default/jenkins 
+   37  service jenkins restart
+   38  ifconfig.co
+   39  curl ifconfig.co
+   40  service jenkins status
+   41  vi /etc/default/jenkins 
+   42  less /var/log/jenkins/jenkins.log 
+   43  view /var/log/jenkins/jenkins.log 
+   44  pwd
+   45  cd /var/lib/jenkins/
+   46  ls lart
+   47  ls -lart
+   48  cd plugins/
+   49  ls -lart
+   50  cd /var/lib/jenkins/secrets/
+   51  ls -lart
+   52  vi initialAdminPassword 
+   53  echo $JENKINS_HOME
+   54  cd /var/lib/jenkins/
+   55  ls -laet
+   56  ls -lart
+   57  vi config.xml 
+   58  pwd
+   59  ls -lart
+   60  ls -laetpwd
+   61  pwd
+   62  hostname
+   63  vi /var/lib/jenkins/secrets/initialAdminPassword 
+   64  cat /var/lib/jenkins/secrets/initialAdminPassword 
+   65  cd /var/lib/jenkins/workspace/
+   66  ls -lart
+   67  cd hello-java/
+   68  ls 
+   69  service jenkins restart
+   70  curl ifconfig.co
+   71  java --version
+   72  cd /home/cloud_user/democode/
+   73  cd ..
+   74  mkdir jenkins
+   75  cd jenkins/
+   76  git clone https://github.com/jenkinsdemos/newmaven
+   77  pwd
+   78  ls -lart
+   79  cd newmaven/
+   80  cd src/main/webapp/WEB-INF/
+   81  ls -lart
+   82  cd /var/lib/jenkins/workspace/
+   83  ls -lart
+   84  cd maven-job/
+   85  ls -lart
+   86  cd target/
+   87  ls -lart
+   88  cd 
+   89  cd -
+   90  cd JenkinsWar/
+   91  ls -lar
+   92  cd ..
+   93  cd /var/lib/jenkins/workspace/maven-ci-job
+   94  ls -lart
+   95  cd src/
+   96  ls -lart
+   97  cd main/webapp/WEB-INF/
+   98  ls -lart
+   99  cd ..
+  100  pwd
+  101  cd ..
+  102  pwd
+  103  cd webapp
+  104  vi index.jsp 
+  105  pwd
+  106  apt-get install tomcat9
+  107  service tomcat9 status
+  108  pw
+  109  pwd
+  110  cd ..
+  111  ls -lar
+  112  cd ..
+  113  ls -lart
+  114  cd /var/lib/tomcat9/webapps/
+  115  chmod -R 777 .
+  116  ls -lart
+  117  pwd
+  118  cd 
+  119  wget https://fidelitydevops.s3.us-east-2.amazonaws.com/jenkins-cli.jar
+  120  java -jar jenkins-cli.jar -s http://104.211.229.84:8090/ list-jobs
+  121  java -jar jenkins-cli.jar -s http://104.211.229.84:8090/ -auth admin:admin list-jobs
+  122  java -jar jenkins-cli.jar -s http://104.211.229.84:8090/ -auth admin:admin list-plugins
+  123  java -jar jenkins-cli.jar -s http://104.211.229.84:8090/ -auth admin:116c12ec9fc5b665afcba5cb52f632211c list-plugins
+  124  java -jar jenkins-cli.jar -s http://104.211.229.84:8090/ -auth admin:116c12ec9fc5b665afcba5cb52f632211c list-jobs
+  125  wget -qO- https://get.docker.com/ | sh
+  126  docker
+  127  docker pull tomcat
+  128  docker pull mysql
+  129  docker images
+  130  docker pull centos:6
+  131  docker ps
+  132  docker run -d --name=c1 centos:6
+  133  docker os
+  134  docker ps
+  135  docker run -it --name=c2 centos:6
+  136  docker ps -a
+  137  docker ps
+  138  docker ps -a
+  139  docker run -it --name=c3 centos:6
+  140  docker ps -a
+  141  docker exec -it c3 /bin/bash
+  142  docker ps -a
+  143  docker exec -it c1 /bin/bash
+  144  docker exec -it c2 /bin/bash
+  145  docker ps -a
+  146  docker
+  147  docker login
+  148  docker run -itd --name=n1 nginx
+  149  docker ps -a
+  150  docker exec -it n1 /bin/bash
+  151  curl 104.211.229.84
+  152  curl ifconfig.co
+  153  docker inspect n1
+  154  curl 172.17.0.4
+  155  docker commit n1 sourabh/myname:v1
+  156  docker push sourabh/myname:v1
+  157  docker login
+  158  docker push sourabh/myname:v1
+  159  docker push --help
+  160  docker commit n1 srbhdocker/myname:v1
+  161  docker push srbhdocker/myname:v1
+  162  history
+  163  docker inspect n1
+  164  history
+  165  docker run -itd --name=n2  148  docker run -itd --name=n1 nginx
+  166  docker login
+  167  docker run -itd --name=n2  148  docker run -itd --name=n1 nginx
+  168  docker run -itd --name=n2 brjshbhatt/nginx:v1
+  169  docker images
+  170  docker run -it --name=n3 srbhdocker/myname:v1
+  171  docker ps -a
+  172  docker rum
+  173  docker rm 
+  174  docker rm $(docker ps -a -q)
+  175  docker rm -force $(docker ps -a -q)
+  176  docker rm -f $(docker ps -a -q)
+  177  docker -images
+  178  docker -image
+  179  docker images
+  180  docker rm fae9811aff0d
+  181  docker stop $(docker ps -a -q)
+  182  docker ps -a -q
+  183  docker rm -f
+  184  docker images
+  185  docker rm bf883497f21c
+  186  history
+  187  docker run -it --name=n3 srbhdocker/myname:v1
+  188  docker images
+  189  docker container rm bf883497f21c
+  190  df -k .
+  191  history
+  192  docker ps
+  193  docker run -it --name=n3 srbhdocker/myname:v1
+  194  docker run -it --name=n4 srbhdocker/myname:v1
+  195  docker run -itd --name=m1 8100:80 nginx
+  196  docker run -itd --name=m1 -p 8100:80 nginx
+  197  docker inspect m1
+  198  curl 172.17.0.2
+  199  docker images
+  200  docker ps -a
+  201  docker rm -rf
+  202  docker rm -f 5f262d518730
+  203  docker ps -a
+  204  docker rm -f aa8f95c490bc
+  205  docker rm -f a5c5eb1dc8e2
+  206  docker run -itd --name=m1 8100:80 srbhdocker/myname:v1
+  207  docker run -itd --name=m1 -p 8100:80 srbhdocker/myname:v1
+  208  docker inspect m1
+  209  curl 172.17.0.2:8000
+  210  curl 172.17.0.2:8100
+  211  curl 172.17.0.2
+  212  docker port 
+  213  docker port m1
+  214  curl 172.17.0.2 -p 8100
+  215  pwd
+  216  mkdir web
+  217  vi web/index.html
+  218  docker run -itd -name=v2 -v /root/web:/usr/share/nginx/html -p 8200:80 nginx
+  219  docker run -itd --name=v2 -v /root/web:/usr/share/nginx/html -p 8200:80 nginx
+  220  docker inspect v2
+  221  curl 172.17.0.3
+  222  pwd
+  223  vi Dockerfile
+  224  docker build -t t1:v1 -f Dockerfile 
+  225  echo $va1
+  226  docker exec -it --name=b1 t1:v1
+  227  docker exec -it  /bin/bash
+  228  docker build -t t1:v1 -f Dockerfile 
+  229  ls -lart
+  230  docker build -t t1:v1 -f Dockerfile .
+  231  echo $va1
+  232  docker exec -it --name=b1 t1:v1
+  233  docker run -it --name=b1 t1:v1
+  234  pwd
+  235  vi Dockerfile 
+  236  docker run -it --name=b1 t1:v1 .
+  237  docker run -it --name=b2 t1:v1 .
+  238  pwd
+  239  ls -lart
+  240  docker build -t t1:v1 -f Dockerfile .
+  241  docker run -it --name=b4 t1:v1 .
+  242  docker run -it --name=b3 t1:v1 .
+  243  docker images
+  244  docker images ps -a
+  245  docker rm -f 58678142db56
+  246  docker kill 58678142db56
+  247  vi Dockerfile 
+  248  docker build -t t1:v2 -f Dockerfile .
+  249  docker run -it --name=b5 t1:v2 .
+  250  docker rm -f "docker ps -a -q"
+  251  docker rm -f 'docker ps -a -q'
+  252  docker rm -f '$docker ps -a -q'
+  253  docker rm -f `docker ps -a -q`
+  254  docker images
+  255  docker ps -a
+  256  ls -lart
+  257  curl ifconfig.co
+  258  history
+  259  history >> commands.txt
